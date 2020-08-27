@@ -1,0 +1,11 @@
+@import './abstracts/_variables.scss';
+@import './abstracts/_mixins.scss';
+@import './abstracts/_functions.scss';
+@import './base/_base.scss';
+@import './base/_animations.scss';
+@import './base/_utilities.scss';
+
+//layout
+@import './layouts/_bg-page-login.scss';
+//page
+@import './pages/login-page.scss';
