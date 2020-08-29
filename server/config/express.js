@@ -1,17 +1,37 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-// const passport = require('./passport');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const { env } = require('./config');
-const routes = require('../routes');
+const expressSession = require('express-session');
+
+const { env, session } = require('./config');
+const passportSetup = require('./passport');
+const authRoute = require('../routes/auth.route');
+
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: [session.key],
+    secret: session.secret,
+    maxAge: session.age,
+  }),
+);
+
+// parse cookies
 app.use(cookieParser());
+
+// initalize passport
+app.use(passport.initialize());
+// deserialize cookie from the browser
+app.use(passport.session());
 
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
@@ -19,7 +39,8 @@ app.use(cors());
 // app.use(passport.initialize());
 
 // API router
-app.use('/api', routes);
+// app.use('/api', routes);
+app.use('/auth', authRoute);
 
 // Choose what fronten framework to serve the dist from
 // var distDir = '../../dist/';

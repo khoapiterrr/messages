@@ -35,6 +35,13 @@ module.exports = {
     username: process.env.EMAIL_USERNAME,
     password: process.env.EMAIL_PASSWORD,
   },
+
+  session: {
+    key: process.env.COOKIE_KEY,
+    secret: process.env.COOKIE_SECRET,
+    age: 86400000,
+  },
+
   logs: process.env.NODE_ENV === 'production' ? 'combined' : 'dev',
 
   fileDirectory: process.env.FILES_DIRECTORY,
