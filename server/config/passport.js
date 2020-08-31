@@ -1,7 +1,9 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
+const GitHubStrategy = require('passport-github2').Strategy;
 const User = require('../models/user.model');
-const { google } = require('./config');
+const { google, facebook, github } = require('./config');
 // serialize the user.id to save in the cookie session
 // so the browser will remember the user when login
 passport.serializeUser((user, done) => {
@@ -56,6 +58,36 @@ passport.use(
       //   }
       // }
       // done(null, currentUser);
+    },
+  ),
+);
+passport.use(
+  new FacebookStrategy(
+    {
+      // options for facebook strategy
+      clientID: facebook.id,
+      clientSecret: facebook.secret,
+      callbackURL: '/auth/facebook/redirect',
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      // const user = profile.displayName + ' - ' + profile.id;
+      console.log(profile, 'profile');
+      done(null, profile);
+    },
+  ),
+);
+
+passport.use(
+  new GitHubStrategy(
+    {
+      // options for github strategy
+      clientID: github.id,
+      clientSecret: github.secret,
+      callbackURL: '/auth/github/redirect',
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      console.log(profile, 'profile');
+      done(null, profile);
     },
   ),
 );

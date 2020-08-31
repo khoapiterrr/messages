@@ -11,6 +11,7 @@ const FacebookLogin = () => {
         id='facebook'
         variant='contained'
         className='w-100'
+        onClick={openWindowLogin}
         size='large'
         color='secondary'>
         <FacebookIcon /> &nbsp; Login with facebook

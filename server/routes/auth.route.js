@@ -46,4 +46,28 @@ router.get(
     failureRedirect: '/auth/login/failed',
   }),
 );
+
+// auth with facebook
+router.get('/facebook', passport.authenticate('facebook'));
+
+// redirect to home page after successfully login via facebook
+router.get(
+  '/facebook/redirect',
+  passport.authenticate('facebook', {
+    successRedirect: CLIENT_HOME_PAGE_URL,
+    failureRedirect: '/auth/login/failed',
+  }),
+);
+
+// auth with github
+router.get('/github', passport.authenticate('github'));
+
+// redirect to home page after successfully login via github
+router.get(
+  '/github/redirect',
+  passport.authenticate('github', {
+    successRedirect: CLIENT_HOME_PAGE_URL,
+    failureRedirect: '/auth/login/failed',
+  }),
+);
 module.exports = router;

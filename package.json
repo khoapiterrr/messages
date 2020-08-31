@@ -21,18 +21,22 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validation": "^3.0.5",
+    "formik": "^2.1.5",
     "http-status": "^1.4.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pug": "^3.0.0",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

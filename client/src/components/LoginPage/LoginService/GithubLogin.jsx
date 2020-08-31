@@ -10,6 +10,7 @@ const GithubLogin = () => {
     <React.Fragment>
       <Button
         id='github'
+        onClick={openWindowLogin}
         variant='contained'
         className='w-100'
         size='large'
