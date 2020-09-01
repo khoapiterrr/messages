@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 // deserialize cookie from the browser
 app.use(passport.session());
-
+app.use(express.json());
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 

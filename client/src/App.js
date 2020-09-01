@@ -5,6 +5,7 @@ import { Button, ThemeProvider } from '@material-ui/core';
 import NotFound from './components/NotFound';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import theme from './components/themes/Palette';
+import { MessagePage } from './components/MessagePage';
 // Lazy load - Code splitting
 const AuthPage = React.lazy(() => import('./containers/AuthPage'));
 
@@ -14,11 +15,11 @@ function App() {
       <Suspense fallback={<div>Loading ...</div>}>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-            {/* <Switch>
-            <Route path='/' component={} />
-            <Route component={NotFound} />
-          </Switch> */}
-            <AuthPage />
+            <Switch>
+              <Route path='/' exact component={MessagePage} />
+              <Route path='/login' component={AuthPage} />
+              <Route component={NotFound} />
+            </Switch>
           </BrowserRouter>
         </ThemeProvider>
       </Suspense>

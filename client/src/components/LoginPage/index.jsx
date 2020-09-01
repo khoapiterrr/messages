@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid, Button } from '@material-ui/core';
-
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const LoginPage = ({ children }) => {
@@ -39,6 +39,9 @@ const LoginPage = ({ children }) => {
       </div>
     </React.Fragment>
   );
+};
+LoginPage.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default LoginPage;
