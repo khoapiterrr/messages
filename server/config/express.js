@@ -6,7 +6,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
-
+const errors = require('../middlewares/error');
 const { env, session } = require('./config');
 const passportSetup = require('./passport');
 const authRoute = require('../routes/auth.route');
@@ -41,6 +41,10 @@ app.use(cors());
 // API router
 // app.use('/api', routes);
 app.use('/auth', authRoute);
+
+// handle errors
+app.use(errors.validationError);
+app.use(errors.notFound);
 
 // Choose what fronten framework to serve the dist from
 // var distDir = '../../dist/';

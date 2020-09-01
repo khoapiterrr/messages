@@ -23,13 +23,13 @@ const userSchema = new mongoose.Schema(
       minlength: 6,
       maxlength: 128,
     },
-    firstName: {
+    firstname: {
       type: String,
       maxlength: 20,
       minlength: 2,
       trim: true,
     },
-    lastName: {
+    lastname: {
       type: String,
       maxlength: 20,
       minlength: 2,
@@ -82,7 +82,7 @@ userSchema.method({
       'id',
       'firstname',
       'lastname',
-      'picture',
+      'avatar',
       'createdAt',
       'email',
     ];
@@ -93,11 +93,12 @@ userSchema.method({
 
     return transformed;
   },
+
   generateToken() {
     const playload = {
       id: this._id,
       email: this.email,
-      name: `${this.firstName} ${this.lastName}`,
+      name: `${this.firstname} ${this.lastname}`,
     };
     // const playload = this._id;
     return jwt.sign(playload, jwtSecret, {

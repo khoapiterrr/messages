@@ -1,5 +1,10 @@
 const User = require('../models/user.model');
+const bcrypt = require('bcryptjs');
 const ApiResponse = require('../utils/ApiResponse');
+
+const hashPassword = async (password) => {
+  return await bcrypt.hash(password, 12);
+};
 
 module.exports.loginSuccess = async (req, res, next) => {
   try {
@@ -24,8 +29,17 @@ module.exports.getUsers = async (req, res, next) => {
 
 module.exports.register = async (req, res, next) => {
   try {
-    console.log(req.data, 'req.data');
+    // console.log(req.body, 'req.data');
+    const checkDuplicateEmail = await User.findOne({ email: req.body.email });
+    if (checkDuplicateEmail) {
+      throw new Error('Email is already registered');
+    }
+
+    req.body.password = await hashPassword(req.body.password);
+    const newUser = await new User(req.body).save();
+    ApiResponse.ok(req, res, newUser.transform());
   } catch (error) {
+    console.log(error, 'error');
     return ApiResponse.serverError(req, res, error);
   }
 };
