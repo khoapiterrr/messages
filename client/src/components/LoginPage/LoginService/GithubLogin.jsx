@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import githubImage from '../../../assets/images/github-image.png';
 const GithubLogin = () => {
   const openWindowLogin = () => {
-    window.open('http://localhost:8888/auth/github', '_self');
+    window.open('http://localhost:8888/api/auth/github', '_self');
   };
   return (
     <React.Fragment>

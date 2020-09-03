@@ -4,7 +4,7 @@ import googleImage from '../../../assets/images/shapes-and-symbols.png';
 
 const GoogleLogin = () => {
   const openWindowLogin = () => {
-    window.open('http://localhost:8888/auth/google', '_self');
+    window.open('http://localhost:8888/api/auth/google', '_self');
   };
   return (
     <React.Fragment>

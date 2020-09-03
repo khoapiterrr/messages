@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 const FacebookLogin = () => {
   const openWindowLogin = () => {
-    window.open('http://localhost:8888/auth/facebook', '_self');
+    window.open('http://localhost:8888/api/auth/facebook', '_self');
   };
   return (
     <React.Fragment>

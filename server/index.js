@@ -2,6 +2,7 @@ const app = require('./config/express');
 const { port, env } = require('./config/config');
 //setup-mongoDB
 require('./config/mongoose');
+require('./config/swagger');
 app.get('/', (req, res) => res.send('Home'));
 app.listen(port, () => {
   console.info(`server started on port ${port} - ${env}`);

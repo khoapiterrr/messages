@@ -6,11 +6,11 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
+
 const errors = require('../middlewares/error');
 const { env, session } = require('./config');
 const passportSetup = require('./passport');
-const authRoute = require('../routes/auth.route');
-
+const apiRoute = require('../routes/api');
 const app = express();
 
 app.use(bodyParser.json());
@@ -40,7 +40,7 @@ app.use(cors());
 
 // API router
 // app.use('/api', routes);
-app.use('/auth', authRoute);
+app.use('/api', apiRoute);
 
 // handle errors
 app.use(errors.validationError);

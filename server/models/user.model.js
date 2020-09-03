@@ -162,3 +162,43 @@ userSchema.statics = {
 };
 
 module.exports = User = mongoose.model('user', userSchema);
+
+/**
+ * @swagger
+ *  components:
+ *    schemas:
+ *      User:
+ *        type: object
+ *        properties:
+ *          name:
+ *            type: string
+ *          email:
+ *            type: string
+ *            format: email
+ *          password:
+ *            type: string
+ *          firstname:
+ *            type: string
+ *          lastname:
+ *            type: string
+ *          googleId:
+ *            type: string
+ *          facebookId:
+ *            type: string
+ *          githubId:
+ *            type: string
+ *          avatar:
+ *            type: string
+ *          gender:
+ *            type: integer
+ *
+ *        example:
+ *           name: KhoaPiterr
+ *           email: ltk.gym@gmail.com
+ *           password: 123456789
+ *           firstname: Trong
+ *           lastname: Khoa
+ *           googleId: 4123fdfdsfsdfa3ffdsw3f
+ *           githubId: rwer323432rwe
+ *           facebookId: fefrewr
+ */

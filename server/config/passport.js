@@ -70,7 +70,7 @@ passport.use(
       // options for google strategy
       clientID: google.id,
       clientSecret: google.secret,
-      callbackURL: '/auth/google/redirect',
+      callbackURL: '/api/auth/google/redirect',
     },
     async (accessToken, refreshToken, profile, done) => {
       console.log(profile, 'profile');
@@ -101,7 +101,7 @@ passport.use(
       // options for facebook strategy
       clientID: facebook.id,
       clientSecret: facebook.secret,
-      callbackURL: '/auth/facebook/redirect',
+      callbackURL: '/api/auth/facebook/redirect',
     },
     async (accessToken, refreshToken, profile, done) => {
       console.log(profile, 'profile');
@@ -133,7 +133,7 @@ passport.use(
       // options for github strategy
       clientID: github.id,
       clientSecret: github.secret,
-      callbackURL: '/auth/github/redirect',
+      callbackURL: '/api/auth/github/redirect',
     },
     async (accessToken, refreshToken, profile, done) => {
       console.log(profile, 'profile');
