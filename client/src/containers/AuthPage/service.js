@@ -23,3 +23,7 @@ export const registerAccount = async ({
   });
   return response;
 };
+
+export const LoginAcount = async ({ email, password }) => {
+  const response = await axios.post('/auth/');
+};
