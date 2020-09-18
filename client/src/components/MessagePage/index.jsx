@@ -7,10 +7,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { getOffset } from '../../utils/common';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+
 export const MessagePage = () => {
-  const [style, setStyle] = useState({
-    'overflow-x': 'hidden',
-  });
+  const [style, setStyle] = useState({});
   useEffect(() => {
     const ofTop = getOffset(document.getElementById('listChat')).top;
     setStyle({ ...style, height: `calc(100vh - ${ofTop}px)` });
@@ -56,7 +56,10 @@ export const MessagePage = () => {
                       <ExpandMoreIcon />
                     </div>
                   </div>
-                  <div className='list-chat' id='listChat' style={style}>
+                  <div
+                    className='list-chat scroll-chat'
+                    id='listChat'
+                    style={style}>
                     <div className='list-chat-item'>
                       <Avatar
                         alt='Trong khoa'
@@ -327,21 +330,16 @@ export const MessagePage = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xl={6} md={6} sm='auto'>
-              <Box color='text.primary' clone>
-                <Button>Trnjg khoa</Button>
-              </Box>
-              <Box color='text.primary' clone>
-                <Button>Trnjg khoa</Button>
-              </Box>
-              <Box color='text.primary' clone>
-                <Button>Trnjg khoa</Button>
-              </Box>
-            </Grid>
+            <Grid item xl={6} md={6} sm='auto'></Grid>
             <Grid item xl={3} md={3} sm={3}>
-              <Box color='text.primary' clone>
-                <Button>Trnjg khoa</Button>
-              </Box>
+              <div className='user-info-wrapper'>
+                <div className='title'>
+                  <h2 className='h2'>User Info</h2>
+                  <span>
+                    <HighlightOffIcon />
+                  </span>
+                </div>
+              </div>
             </Grid>
           </Grid>
         </Container>
