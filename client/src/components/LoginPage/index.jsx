@@ -15,7 +15,7 @@ const LoginPage = ({ children }) => {
             spacing={8}
             alignItems='center'
             justify='center'>
-            <Grid item xl={5} md={5} sm={10}>
+            <Grid item xl={5} md={5} sm={10} style={{ 'z-index': '2000' }}>
               <div className='lading-content'>
                 <h1>Welcome to the Biggest Social Network in the World</h1>
                 <p>

@@ -21,7 +21,7 @@
     box-sizing: border-box;
     will-change: auto;
     animation: sidedownscroll-loginpage 30s linear infinite;
-    z-index: -1;
+    // z-index: -1;
 
     &::after {
       content: '';
@@ -43,7 +43,6 @@
   .lading-content {
     color: #fff;
     margin-bottom: 30px;
-
     & > * {
       color: inherit;
       margin-bottom: 45px;

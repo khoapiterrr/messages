@@ -1,0 +1,87 @@
+#site-header.header {
+  padding-right: 70px;
+  height: 70px;
+  background-color: #3f4257;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+
+  .page-title {
+    padding: 26px 50px 26px 100px;
+    text-transform: uppercase;
+    float: left;
+    height: 100%;
+    min-width: 170px;
+
+    & > * {
+      color: #fff;
+      margin: 0;
+    }
+  }
+
+  .header-content-action {
+    height: 100%;
+
+    .search-bar.w-search {
+      width: 500px;
+      min-height: 70px;
+      background-color: #494c62;
+    }
+    .search-bar {
+      float: left;
+      width: 500px;
+      height: 70px;
+      background-color: #494c62;
+      position: relative;
+
+      .form-group {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 0;
+        .input-group {
+          height: 100%;
+          width: 100%;
+        }
+        &.with-btn {
+          height: 100%;
+          width: 100%;
+          input {
+            height: 100%;
+            width: 90%;
+            border: none;
+            outline: none;
+            background-color: #494c62;
+            color: #9a9fbf;
+            padding-right: 50px;
+            padding-left: 15px;
+            padding: 13px 15px;
+          }
+          .btn-search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 25px;
+            }
+          }
+        }
+      }
+    }
+
+    .link-find-friend {
+      padding: 25px 20px;
+      color: #fff;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .header-control-action {
+    }
+  }
+}
+.header-spacer {
+  display: block;
+  height: 110px;
+}
